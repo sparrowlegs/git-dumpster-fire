@@ -3,7 +3,7 @@ A collection of scripts and configuration to make Git more usable.
 
 The `config/.gitconfig` assumes that the `bin` directory in your path. 
 
-###### Scripts
+### Scripts
 
 **git-current-branch.sh** : Returns the current branch name.
 
