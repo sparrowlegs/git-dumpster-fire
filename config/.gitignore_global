@@ -1,0 +1,55 @@
+## temp files created by various apps while being edited ###
+*~
+
+# 
+### macOS file turds ###
+.DS_Store
+
+### Package Files ###
+*.jar
+*.war
+*.ear
+*.tar
+*.tgz
+
+### Build Artifacts ###
+stacktrace.log
+*.log
+/target/
+/build/
+/reports/
+/out/
+web-app/plugins
+web-app/WEB-INF/classes
+*.class
+.gradle
+.gradletasknamecache
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.classpath
+.project
+target-eclipse
+.settings
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
