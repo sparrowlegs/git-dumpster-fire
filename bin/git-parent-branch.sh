@@ -8,16 +8,16 @@
 current_branch=`git symbolic-ref --short HEAD 2>/dev/null`
 
 if [ -z "${current_branch}" ]; then
-	exit 1
+    exit 1
 fi
 
 if [ "${current_branch}" == "develop" ]; then
-	echo "master"
-	exit 0
+    echo "master"
+    exit 0
 fi
-	
+    
 if [ "${current_branch}" == "master" ]; then
-	exit 0
+    exit 0
 fi
 
 git show-branch -a 2>/dev/null | grep '\*' | grep -v "${current_branch}" | head -n1 | perl -ple 's/\[[A-Za-z]+-\d+\][^\]]+$//; s/^.*\[([^~^\]]+).*$/$1/'
