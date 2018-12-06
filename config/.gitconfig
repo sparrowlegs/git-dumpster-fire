@@ -1,0 +1,66 @@
+[color]
+    ui = auto
+    branch = auto
+    status = auto
+    
+[color "status"]
+    added = green
+    updated = blue
+    changed = yellow
+    unracked = red    
+    	
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	
+	cbr = "!git-current-branch.sh #"
+	pbr = "!git-parent-branch.sh #"	
+	lbr = "!git-local-only-branches.sh #"	
+	refresh-parent = "!git-refresh-parent-branch.sh #"		
+
+[core]
+	autocrlf = input
+	
+    # For OSX only. Go read the snarky man page
+    fsyncobjectfiles = true	
+    
+    trustctime = false
+    
+[push]
+	default = simple
+
+[credential]
+	helper = osxkeychain
+	
+[http]
+    # Without this. Git would often have trouble with stupidly large commits.
+    postBuffer = 524288000
+
+    sslVerify = true	
+    
+[pack]
+    # Auto detect right number of threads
+    threads = 0    
+    
+# Use BBEdit for diffs
+[diff]
+    tool = "bbdiff"
+[difftool]
+    prompt = false
+[difftool "bbdiff"]
+    cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+    
+# Use BBEdit for merges
+[merge]
+    tool = "bbdiff"
+[mergetool]
+    prompt = false
+[mergetool "bbdiff"]
+    cmd = /usr/local/bin/bbdiff --wait --resume "$LOCAL" "$REMOTE"
+
+[fetch]
+	prune = true
+[pull]
+	rebase = true
