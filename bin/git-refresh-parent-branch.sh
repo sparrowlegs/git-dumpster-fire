@@ -17,7 +17,7 @@ if [ "${current_branch}" == "develop" -o "${current_branch}" == "master" ]; then
     exit 0
 fi
 
-parent_branch=`git show-branch -a 2>/dev/null | grep '\*' | grep -v "${current_branch}" | head -n1 | perl -ple 's/[^\[]+\[[A-Za-z]+-\d+\][^\]]+$//; s/^[^\[]+\[([^~^\]]+).*$/$1/'`
+parent_branch=`git show-branch -a 2>/dev/null | grep '\*' | grep -v "${current_branch}" | fgrep -v "[origin" | head -n1 | perl -ple 's/[^\[]+\[[A-Za-z]+-\d+\][^\]]+$//; s/^[^\[]+\[([^~^\]]+).*$/$1/'`
 
 if [ -z "${parent_branch}" ]; then
     echo "Couldn't find parent branch"

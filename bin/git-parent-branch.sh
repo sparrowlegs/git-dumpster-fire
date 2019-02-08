@@ -20,4 +20,5 @@ if [ "${current_branch}" == "master" ]; then
     exit 0
 fi
 
-git show-branch -a 2>/dev/null | grep '\*' | grep -v "${current_branch}" | head -n1 | perl -ple 's/[^\[]+\[[A-Za-z]+-\d+\][^\]]+$//; s/^[^\[]+\[([^~^\]]+).*$/$1/'
+git show-branch -a 2>/dev/null | grep '\*' | grep -v "${current_branch}" | fgrep -v "[origin" | head -n1 | perl -ple 's/[^\[]+\[[A-Za-z]+-\d+\][^\]]+$//; s/^[^\[]+\[([^~^\]]+).*$/$1/'
+
